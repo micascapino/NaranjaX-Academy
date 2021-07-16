@@ -1,4 +1,5 @@
 const fs = require('fs');
+var showFile = require('../module2/export.js');
 
 //feel free to edit the numbers here below
 const limit = 10;
@@ -21,3 +22,6 @@ fs.writeFile(fileName,table,error =>{
         console.log("File created successfully :)");
         //shows this message when the file is created without errors.
 });
+
+showFile(fileName,table);
+console.log(table);
