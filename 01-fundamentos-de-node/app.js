@@ -17,7 +17,6 @@ createFile(fileName,table,limit,number).then(fileName => {
     console.log(error);
 });
 
-
 showFile(fileName).then(table => {
     console.log(`Table found in "${fileName}":`);
     console.log(table);
