@@ -1,11 +1,12 @@
-let showFile = (fileName, table) => {
+let showFile = (fileName) => {
     const fs = require('fs');
     return new Promise((resolve, reject) =>{
         fs.readFile(fileName,(error,table) =>{
             if (error)
                 reject(error);
             else
-                resolve(table);
+                resolve(table.toString());
+                //"toString" is needed because readFile returns a buffer.
         });
     });
 };
