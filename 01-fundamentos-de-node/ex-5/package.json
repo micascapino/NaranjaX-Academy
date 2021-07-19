@@ -1,0 +1,14 @@
+{
+  "name": "ex-5",
+  "version": "1.0.0",
+  "description": "colors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Micaela Scapino",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
