@@ -16,7 +16,7 @@ const argv = require('yargs')
             let value = argv.n;
             if (isNaN (value))
                 throw Error('The value must be a number.');
-            else if((value < 1) && (value > 20))
+            else if((value < 1) || (value > 20))
                 throw Error('The number must be between 1 and 20.');
             else return true;
         })
