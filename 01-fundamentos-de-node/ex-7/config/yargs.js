@@ -21,4 +21,4 @@ const argv = require('yargs')
         })
     .argv;
 
-module.exports = argv;
+module.exports = {argv}
