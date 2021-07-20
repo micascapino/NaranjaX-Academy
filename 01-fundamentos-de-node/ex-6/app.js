@@ -2,7 +2,6 @@ const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 const argv = yargs(hideBin(process.argv)).argv;
 const fs = require('fs');
-
 var createFile = require('../ex-3/create.js');
 
 //we will use the table to concatenate the results

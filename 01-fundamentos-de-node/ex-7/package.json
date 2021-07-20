@@ -1,0 +1,15 @@
+{
+  "name": "ex-7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Micaela Scapino",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.12",
+    "yargs": "^17.0.1"
+  }
+}
