@@ -1,9 +1,11 @@
-const { argv } = require('../ex-7/config/yargs');
+const { argv } = require('../ex-7/config/yargs.js');
 var createFile = require('../ex-3/create.js');
 var showFile = require('../ex-3/read.js');
 
 //we will use the table to concatenate the results
 var table= "";
+
+console.log(argv);
 
 //we write "node app --number={value here}" at the console.
 const limit = 10;

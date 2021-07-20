@@ -8,7 +8,7 @@ const argv = require('yargs')
         .option('l', {
             alias: 'list',
             type: 'boolean',
-            demandOption:true,
+            demandOption:false,
             defaul:false,
             describe:"List table"
         })
@@ -20,3 +20,5 @@ const argv = require('yargs')
             return true;
         })
     .argv;
+
+module.exports = argv;
