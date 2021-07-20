@@ -10,8 +10,8 @@ var table= "";
 const limit = 10;
 const number = argv.n;
 
-//we will replace the format of the file name according to the number choosen
-const fileName = `table-${number}.txt`;
+//we will replace the format of the file name according to the number choosen and place them in "exit" folder
+const fileName = `../ex-7/exit/table-${number}.txt`;
 
 createFile(fileName,table,limit,number)
     .then(fileName => {
