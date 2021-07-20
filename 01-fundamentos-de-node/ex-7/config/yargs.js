@@ -3,14 +3,14 @@ const argv = require('yargs')
             alias: 'number',
             type: 'number',
             demandOption:true,
-            describe:"defines the number value"
+            describe:"Defines the number value"
         })
         .option('l', {
             alias: 'list',
             type: 'boolean',
             demandOption:true,
             defaul:false,
-            describe:"list table"
+            describe:"List table"
         })
         .check( (argv,options) => {
             if (isNaN (argv.n))

@@ -1,4 +1,4 @@
-const { argv } = require('../config/yargs');
+const { argv } = require('../ex-7/config/yargs');
 var createFile = require('../ex-3/create.js');
 var showFile = require('../ex-3/read.js');
 
