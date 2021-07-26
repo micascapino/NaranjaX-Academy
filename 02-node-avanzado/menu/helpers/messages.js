@@ -1,4 +1,3 @@
-var colors = require('colors');
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -32,7 +31,7 @@ const showMenu = () =>{
 
 const pause = () =>{
     return new Promise((resolve,reject) =>{
-        rl.question("Press " + "ENTER ".green + "to continue.",(input) =>{
+        rl.question("Press ENTER to continue.",() =>{
             rl.close();
             resolve();
         })
@@ -40,4 +39,4 @@ const pause = () =>{
     
 }
 
-module.exports = {showMenu, pause}
+module.exports = {showMenu, pause};
