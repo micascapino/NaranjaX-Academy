@@ -1,10 +1,11 @@
 const { showMenu, pause, readInput } = require("./helpers/inquirer");
-const { saveDB } = require("./helpers/savefile");
+const { saveDB,readDB } = require("./helpers/savefile");
 const { Tasks } = require("./models/tasks");
 
 const main = async() => {
     let opt = '';
     var tasks=new Tasks();
+
     do{
         opt = await showMenu(); 
         switch(opt){
@@ -13,7 +14,8 @@ const main = async() => {
                 tasks.newTask(desc);
                 break;
             case '2':
-                console.log(tasks.listArray);
+                const data= readDB();
+                console.log(data);
                 break;
             //not implemented yet
             case '3':

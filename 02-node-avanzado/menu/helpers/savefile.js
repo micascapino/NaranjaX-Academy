@@ -1,8 +1,18 @@
 const fs = require('fs');
+const filePath = "database/tasks.json";
 
 const saveDB = (tasks) => {
-    let fileName = "database/tasks.json";
-    fs.writeFileSync(fileName,JSON.stringify(tasks))
+    fs.writeFileSync(filePath,JSON.stringify(tasks))
 }
 
-module.exports = {saveDB};
+const readDB = () =>{
+    if (fs.existsSync(filePath)){
+        const list = fs.readFileSync(filePath, {encoding: "utf-8"});
+        data = JSON.parse(list);
+        return data;
+    }
+    else
+        return("File not found.".red);
+}
+
+module.exports = {saveDB,readDB};
