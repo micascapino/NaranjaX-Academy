@@ -1,5 +1,6 @@
 const { showMenu, pause, readInput } = require("./helpers/inquirer");
-const {Tasks} = require("./models/tasks");
+const { saveDB } = require("./helpers/savefile");
+const { Tasks } = require("./models/tasks");
 
 const main = async() => {
     let opt = '';
@@ -25,7 +26,7 @@ const main = async() => {
                 break; 
         
         }
-
+        saveDB(tasks.listArray);
         await pause();
 
     }while (opt !== '0');
