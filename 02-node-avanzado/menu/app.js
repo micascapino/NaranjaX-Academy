@@ -1,19 +1,31 @@
-const { showMenu, pause } = require("./helpers/inquirer");
-const {Task} = require("./models/task");
+const { showMenu, pause, readInput } = require("./helpers/inquirer");
 const {Tasks} = require("./models/tasks");
-require('colors');
+
 
 const main = async() => {
     let opt = '';
+    var tasks=new Tasks();
     do{
-        opt = await showMenu();
-        const task = new Task("Buy food");
-        console.log(task);
-
-        const tasks=new Tasks();
-        tasks.list[task.id]=task;
-        console.log(tasks);
+        opt = await showMenu(); 
+        switch(opt){
+            case '1':
+                const desc = await readInput("Description:");
+                tasks.newTask(desc);
+                break;
+            case '2':
+                console.log(tasks.list);
+                break;
+            case '3':
+                break;  
+            case '4':
+                break;  
+            case '5':
+                break; 
+            case '6':
+                break; 
         
+        }
+
         await pause();
 
     }while (opt !== '0');
