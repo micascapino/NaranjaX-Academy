@@ -3,22 +3,22 @@ require('colors');
 
 const showMenu = async() => {        
     console.clear();
-    console.log('=======================');
-    console.log('   Select an option');
-    console.log('=======================\n');
+    console.log('======================='.green);
+    console.log('   Select an option'.green);
+    console.log('=======================\n'.green);
     const question = [
         {
             type: "list",
             name: "option",
-            message: "Select an option",
+            message: "Select an option".bold,
             choices: [
-                {value: "1", name:"1. New task"},
-                {value: "2", name:"2. Show tasks"},
-                {value: "3", name:"3. Show completed tasks"},
-                {value: "4", name:"4. Show pending tasks"},
-                {value: "5", name:"5. Complete task(s)"},
-                {value: "6", name:"6. Delete task"},
-                {value: "0", name:"7. Exit"},
+                {value: "1", name:"1.".cyan + " New task"},
+                {value: "2", name:"2.".cyan + " Show tasks"},
+                {value: "3", name:"3.".cyan + " Show completed tasks"},
+                {value: "4", name:"4.".cyan + " Show pending tasks"},
+                {value: "5", name:"5.".cyan + " Complete task(s)"},
+                {value: "6", name:"6.".cyan + " Delete task"},
+                {value: "0", name:"7.".cyan + " Exit"},
             ]
         }
     ];    
@@ -32,7 +32,7 @@ const pause = async() =>{
         {
             type: "input",
             name: "enter",
-            message: "Press ENTER to continue"
+            message: "Press " + "ENTER ".green + "to continue"
         }
     ];
     await inquirer.prompt(question);

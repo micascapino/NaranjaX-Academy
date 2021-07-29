@@ -1,7 +1,6 @@
 const { showMenu, pause, readInput } = require("./helpers/inquirer");
 const {Tasks} = require("./models/tasks");
 
-
 const main = async() => {
     let opt = '';
     var tasks=new Tasks();
@@ -13,8 +12,9 @@ const main = async() => {
                 tasks.newTask(desc);
                 break;
             case '2':
-                console.log(tasks.list);
+                console.log(tasks.listArray);
                 break;
+            //not implemented yet
             case '3':
                 break;  
             case '4':
