@@ -1,3 +1,4 @@
+const { stat } = require("fs");
 const {Task} = require("./task");
 
 class Tasks{
@@ -12,8 +13,25 @@ class Tasks{
         return list;
     }
 
-    constructor(tasks){
+    constructor(){
         this._list={};
+    }
+
+    //methods
+    addTasksFromArray(tasks = []){
+        tasks.forEach(task => {
+            this._list[task.id] = task;
+        });
+    }
+
+    fullList(){
+        console.log("To do list:".cyan.bold);
+        this.listArray.forEach((task,i) =>{
+           //change the status color
+            const status = task.completedAt ? "Completed".green : "Pending".red;
+            const number = i+1;
+            console.log(`${number} ${task.desc} :: ${status}`);
+        })
     }
 
     newTask(desc){

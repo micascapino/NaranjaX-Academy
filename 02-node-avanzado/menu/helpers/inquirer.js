@@ -2,7 +2,6 @@ var inquirer = require('inquirer');
 require('colors');
 
 const showMenu = async() => {        
-    console.clear();
     console.log('======================='.green);
     console.log('   Select an option'.green);
     console.log('=======================\n'.green);
