@@ -63,6 +63,11 @@ class Tasks{
         const task = new Task(desc);
         this._list[task.id]=task;
     }
+
+    deleteTask(id = ''){
+        if (this._list[id]) //if id exists in my list
+            delete this._list[id];
+    }
 }
 
 module.exports = {Tasks};
