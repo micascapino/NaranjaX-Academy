@@ -24,11 +24,14 @@ const main = async() => {
             case '2': //show tasks
                 tasks.fullList();
                 break;
-            //not implemented yet
             case '3': //Show completed tasks 
+                tasks.listPendientCompleted(true);
                 break;  
             case '4': //Show pending tasks 
+                tasks.listPendientCompleted(false);
                 break;  
+                
+            //not implemented yet
             case '5': //Complete task(s) 
                 break; 
             case '6': //delete task

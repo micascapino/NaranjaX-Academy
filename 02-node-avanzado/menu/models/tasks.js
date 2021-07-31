@@ -1,6 +1,5 @@
-const { stat } = require("fs");
 const {Task} = require("./task");
-
+require('colors');
 class Tasks{
     _list = {};
 
@@ -32,6 +31,32 @@ class Tasks{
             const number = i+1;
             console.log(`${number} ${task.desc} :: ${status}`);
         })
+    }
+
+    listPendientCompleted(completed){
+        //counter to enumerate every task listed.
+        var number = 1;
+        this.listArray.forEach( task => {
+            const status = task.completedAt ? "Completed".green : "Pending".red;
+            //case true (opt 3)
+            if (completed){
+                //completed
+                if (task.completedAt){
+                    console.log(`${number}. ${task.desc}`);
+                    number+=1;
+                }
+                
+            }
+            //case false (opt 4)
+            else{
+                //!completed -> pending
+                if (!task.completedAt){
+                    console.log(`${number}. ${task.desc}`);
+                    number+=1;
+                }
+            }
+            }
+        );
     }
 
     newTask(desc){
