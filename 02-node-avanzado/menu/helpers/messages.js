@@ -1,7 +1,7 @@
-const readline = require('readline');
+const readline = require("readline");
 
-const showMenu = () =>{
-    return new Promise((resolve,reject) => {
+const showMenu = () => {
+    return new Promise((resolve, reject) => {
         console.log("======================".green);
         console.log("   Select an option".green);
         console.log("======================".green);
@@ -19,30 +19,25 @@ const showMenu = () =>{
             output: process.stdout
         });
 
-        rl.question("Select an option: ", (op) =>{
-            if (op >= 0 && op <=6)
-                resolve(op);
-            else
-                reject("The option must be betweet 0 and 6.".red);
+        rl.question("Select an option: ", (op) => {
+            if (op >= 0 && op <= 6) { resolve(op); } else { reject("The option must be betweet 0 and 6.".red); }
             rl.close();
-        })
-    })
-}
+        });
+    });
+};
 
-const pause = () =>{
-    return new Promise((resolve) =>{
-            
+const pause = () => {
+    return new Promise((resolve) => {
         const rl = readline.createInterface({
             input: process.stdin,
             output: process.stdout
         });
 
-        rl.question("Press ENTER to continue.",() =>{
+        rl.question("Press ENTER to continue.", () => {
             rl.close();
             resolve();
-        })
-    })
-    
-}
+        });
+    });
+};
 
-module.exports = {showMenu, pause};
+module.exports = { showMenu, pause };
