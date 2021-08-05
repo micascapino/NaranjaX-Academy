@@ -76,6 +76,27 @@ const listTaskDelete = async(tasks = []) => {
     return id;
 }
 
+const showListChecklist = async(tasks = []) => {
+    //shows the list of tasks we can select
+    const choices = tasks.map((task) =>{
+        return {value: task.id, name: task.desc, checked: (task.completedAt)? true : false }
+    });
+
+    choices.unshift({value: 0, name: "Cancel".yellow});
+
+    const question = [
+        {
+            type:"checkbox",
+            name:"ids",
+            message:"Selections".red,
+            choices
+        }
+    ]
+
+    const {ids} = await inquirer.prompt(question);
+    return ids;
+}
+
 const confirm = async(message) => {
     const question = [
         {
@@ -89,4 +110,4 @@ const confirm = async(message) => {
 
 }
 
-module.exports = {showMenu, pause, readInput, listTaskDelete,confirm};
+module.exports = {showMenu, pause, readInput, listTaskDelete, showListChecklist, confirm};
