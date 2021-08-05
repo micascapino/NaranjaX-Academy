@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
-    "eslint": "^7.31.0",
     "fs": "^0.0.1-security",
     "nodemon": "^2.0.12",
     "uuid": "^8.3.2",
     "yargs": "^17.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
   }
 }
