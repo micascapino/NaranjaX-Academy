@@ -107,7 +107,6 @@ const confirm = async(message) => {
     ];
     const {ok} = await inquirer.prompt(question);
     return ok;
-
 }
 
 module.exports = {showMenu, pause, readInput, listTaskDelete, showListChecklist, confirm};

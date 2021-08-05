@@ -68,6 +68,22 @@ class Tasks{
         if (this._list[id]) //if id exists in my list
             delete this._list[id];
     }
+
+    toggleCompleted(ids = []){
+    ids.forEach(id => {
+        const thisTask = (this._list[id]);
+        if (!thisTask.completedAt)
+            thisTask.completedAt = new Date().toISOString();
+    });
+    
+    this.listArray.forEach(task => {
+        if (!ids.includes(task.id)){
+            this._list[task.id].completedAt = null;
+        }
+    });
+
+    } 
+
 }
 
 module.exports = {Tasks};
